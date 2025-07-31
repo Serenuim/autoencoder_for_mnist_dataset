@@ -39,12 +39,12 @@ This project explores unsupervised learning on the [Fashion MNIST dataset](https
 Encoder:
   Input (28x28)
   → Flatten
-  → Dense(128, activation='selu')
-  → Dense(64, activation='selu')
-  → Dense(32, activation='selu')  # Bottleneck
+  → Dense(128, activation='selu',kernel_initializer='lecun_normal')
+  → Dense(64, activation='selu',kernel_initializer='lecun_normal')
+  → Dense(32, activation='selu',kernel_initializer='lecun_normal')  # Bottleneck
 
 Decoder:
-  → Dense(64, activation='selu')
-  → Dense(128, activation='selu')
+  → Dense(64, activation='selu',kernel_initializer='lecun_normal')
+  → Dense(128, activation='selu',kernel_initializer='lecun_normal')
   → Dense(784, activation='sigmoid')
   → Reshape(28x28)
